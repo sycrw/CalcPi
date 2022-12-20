@@ -5,13 +5,26 @@ function setup(){
 }
 let points = 0;
 let pointsInCircle = 0;
+let pi = 0;
+
 function draw(){
     
+}
+function addOneHunderedPoints(){
+    for(let i = 0;i< 100;i++){
+        addPoint();
+    }
+    calcPI();
 }
 function addTenPoint(){
     for(let i = 0;i< 10;i++){
         addPoint();
     }
+    calcPI()
+}
+function addOnePoint(){
+    addPoint();
+    calcPI();
 }
 function addPoint(){
     fill(255,0,0);
@@ -26,6 +39,12 @@ function addPoint(){
         pointsInCircle++;
     }
     console.log("points: " + points + " InCircle: "+ pointsInCircle);
+}
+function calcPI(){
+    let piDisplay = document.getElementById("pi");
+    pi =4 * (pointsInCircle/points);
+    piDisplay.innerHTML = "pi = " + pi;
+    
 }
 
 
